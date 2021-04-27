@@ -18,7 +18,7 @@ export default function Competences({competences}) {
         <div class="col s12 m4">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">{competence.intitule}</span>
+              <Link as={`/competence/${competence.id}`} href="/competence/[id]"><span class="card-title">{competence.intitule}</span></Link>
             </div>
             <div class="card-action">
               <Link as={`/competence/${competence.id}`} href="/competence/[id]">Voir plus</Link>
