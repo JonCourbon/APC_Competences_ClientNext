@@ -3,7 +3,7 @@ import Section from '../components/Section';
 import Link from 'next/link';
 
 import fetchFromCMS from '../lib/service';
-import getAllCompetences from '../lib/competences';
+import {getAllCompetences} from '../lib/competences';
 
 export default function Competences({competences}) {
   return (

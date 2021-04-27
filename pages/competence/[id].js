@@ -5,18 +5,18 @@ import Section from '../../components/Section';
 import { useRouter } from "next/router";
 
 import fetchFromCMS from '../../lib/service';
-import { getAllCompetenceIds,getCompetence,getNiveauxCompetences } from '../../lib/competences';
+import { getAllCompetenceIds,getCompetence } from '../../lib/competences';
 
 
 
-const Competence = ({competence,niveaux}) => {
+const Competence = ({competence,composantes,niveaux}) => {
   const router = useRouter();
   return (
     <Layout>
     <Section>
     <h2>{competence.intitule}</h2>
     <ul>
-    {competence.composantes.map((composante) => (
+    {composantes.map((composante) => (
       <li>{composante.intitule}</li>
     ))}
     </ul>
@@ -41,22 +41,35 @@ const Competence = ({competence,niveaux}) => {
 
 export const getStaticProps = async ({ params }) => {
   const competence = getCompetence(params.id);
-  const niveaux =getNiveauxCompetences(params.id);
+  const composantes = await fetchFromCMS(`composantes?competence=${params.id}`);
+  let niveaux = await fetchFromCMS(`niveau-competences?competence=${params.id}`);
+  for (let i in niveaux) {
+    let apprentissages=await fetchFromCMS(`apprentissage-critiques?niveau_competence=${niveaux[i].id}`);
+    niveaux[i].apprentissages=apprentissages;
+  }
   
   return {
     props: {
       competence,
+      composantes,
       niveaux
     },
   };
 };
 
-export const getStaticPaths = async () => {
-  paths=getAllCompetenceIds();
+
+export async function getStaticPaths() {
+  const competences = await fetchFromCMS('competences');
+  const paths = competences.map((competence) => {
+    return {
+      params: { id: String(competence.id) }
+    }
+  })
   return {
     paths,
-    fallback: true,
-  };
-};
+    fallback: false
+  }
+}
+
 
 export default Competence;
