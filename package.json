@@ -1,7 +1,8 @@
 {
-  "name": "site_apc_lp_mdn",
+  "name": "apc_competences",
   "version": "0.1.0",
   "private": true,
+  "author":"Jonathan COURBON"
   "scripts": {
     "dev": "next dev",
     "build": "next build",

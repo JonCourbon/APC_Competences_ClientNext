@@ -18,7 +18,7 @@ export default function Home() {
                <h2 class="center light-blue-text"><i class="material-icons">psychology</i></h2>
                <h5 class="center">Compétences</h5>
 
-               <p class="light">Les 5 compétences.</p>
+               <p class="light"><a href="/competences">Les 5 compétences.</a></p>
              </div>
            </div>
 
@@ -27,7 +27,7 @@ export default function Home() {
                <h2 class="center light-blue-text"><i class="material-icons">engineering</i></h2>
                <h5 class="center">SAE</h5>
 
-               <p class="light">Les mises en situation</p>
+               <p class="light"><a href="/saes">Les mises en situation</a></p>
              </div>
            </div>
          </div>
