@@ -1,7 +1,7 @@
 #APC_Competences
 
 
-Client de l'API APC_Traces, développée avec [Next.js](https://nextjs.org/) et permettant de lister:
+Client de l'API [APC_Manager](https://github.com/JonCourbon/APC_Manager), développée avec [Next.js](https://nextjs.org/) et permettant de lister:
 
 - les compétences
 - les Situations d'Apprentissage et d'Evaluation
