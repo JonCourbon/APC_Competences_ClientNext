@@ -17,17 +17,14 @@ Testé avec:
 3.
 ```bash
 npm install
-# ou
-yarn install
 ```
 
 ## Utilisation
-Lancer le server de développement
+1. Lancer le serveur STRAPI
+2. Lancer le serveur de développement
  
 ```bash
 npm run dev
-# ou
-yarn dev
 ```
 
 Ouvrir dans un navigateur l'url: [http://localhost:3000](http://localhost:3000)
