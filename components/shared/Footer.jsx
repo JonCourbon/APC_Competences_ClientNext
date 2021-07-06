@@ -12,7 +12,7 @@ const Footer = () => (
       </div>
       <div class="footer-copyright">
         <div class="container">
-        Fait avec <a class="orange-text text-lighten-3" href="http://strapi.io" target="_new">Strapi</a>, <a class="orange-text text-lighten-3" href="https://nextjs.org" target="_new">Next.js</a> et <a class="orange-text text-lighten-3" href="http://materializecss.com" target="_new">Materialize</a>
+       Développé avec <a class="orange-text text-lighten-3" href="http://strapi.io" target="_new">Strapi</a>, <a class="orange-text text-lighten-3" href="https://nextjs.org" target="_new">Next.js</a> et <a class="orange-text text-lighten-3" href="http://materializecss.com" target="_new">Materialize</a>
         </div>
       </div>
     </footer>

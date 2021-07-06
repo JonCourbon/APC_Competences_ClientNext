@@ -4,6 +4,9 @@ import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import { useRouter } from "next/router";
 
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+
 import fetchFromCMS from '../../lib/service';
 import { getAllCompetenceIds,getCompetence } from '../../lib/competences';
 
@@ -52,7 +55,7 @@ export const getStaticProps = async ({ params }) => {
 
 
 export async function getStaticPaths() {
-  const saes = await fetchFromCMS('saes');
+  const saes = await fetchFromCMS(`saes?diplome=${serverRuntimeConfig.diplome}`);
   const paths = saes.map((sae) => {
     return {
       params: { id: String(sae.id) }
