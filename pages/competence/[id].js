@@ -42,9 +42,9 @@ const Competence = ({competence,composantes,niveaux}) => {
 export const getStaticProps = async ({ params }) => {
   const competence = await fetchFromCMS(`competences/${params.id}`);
   const composantes = await fetchFromCMS(`composantes?competence=${params.id}`);
-  let niveaux = await fetchFromCMS(`niveau-competences?competence=${params.id}`);
+  let niveaux = await fetchFromCMS(`niveaux-competences?competence=${params.id}`);
   for (let i in niveaux) {
-    let apprentissages=await fetchFromCMS(`apprentissage-critiques?niveau_competence=${niveaux[i].id}`);
+    let apprentissages=await fetchFromCMS(`apprentissages?niveau_competence=${niveaux[i].id}`);
     niveaux[i].apprentissages=apprentissages;
   }
   
